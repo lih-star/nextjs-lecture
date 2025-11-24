@@ -1,10 +1,4 @@
-type MovieDetailProps = {
-  params: {
-    id: string;
-  };
-};
-
-export default async function MovieDetail({ params }: MovieDetailProps) {
-  const { id } = params;
+export default async function MovieDetail({ params }: { params: { id: string } }) {
+  const { id } = await params;
   return <h1>Movie {id}</h1>;
 }
