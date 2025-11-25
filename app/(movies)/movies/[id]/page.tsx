@@ -13,7 +13,6 @@ async function getVideo(id: string) {
 
 export default async function MovieDetail({ params }: { params: { id: string } }) {
   const { id } = await params;
-  const movie = await getMovie(id);
-  const video = await getVideo(id);
+  const [movie,video] = await Promise.all([getMovie(id), getVideo(id)]);
   return <h1>{movie.title}</h1>;
 }
