@@ -1,7 +1,7 @@
 import { API_URL } from "../app/(home)/page";
 
 async function getVideo(id: string) {
-  const response = await fetch(`${API_URL}/${id}/videos`);
+  const response = await fetch(`${API_URL}/${id}/videos`,{ cache: "force-cache" });
   return response.json();
 }
 
