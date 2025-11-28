@@ -2,7 +2,6 @@ import { API_URL } from "../app/(home)/page";
 
 async function getVideo(id: string) {
   const response = await fetch(`${API_URL}/${id}/videos`,{ cache: "force-cache" });
-  throw new Error("에러");
   return response.json();
 }
 
